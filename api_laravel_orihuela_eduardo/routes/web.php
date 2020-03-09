@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/productos', 'ProductController@index');
-
-Route::put('/productos/actualizar/{id}', 'ProductController@update');
+Route::get('/productos/buscar', 'ProductController@show');
 
 Route::post('/productos/guardar', 'ProductController@store');
 
-Route::delete('/productos/borrar/{id}', 'ProductController@destroy');
+Route::put('/productos/actualizar', 'ProductController@update');
 
-Route::get('/productos/buscar', 'ProductController@show');
+Route::delete('/productos/borrar/{id}', 'ProductController@destroy');

@@ -14,16 +14,6 @@ class ProductController extends Controller
         return $product;
     }
 
-    //Esta función guardará los productos que enviaremos.
-    public function store(Request $request)
-    {
-        $product = new Product();
-        $product->name = $request->name;
-        $product->description = $request->description;
-
-        $product->save();
-    }
-
     //Esta función devolverá los datos de una producto que hayamos seleccionado para cargar el formulario con sus datos
     public function show(Request $request)
     {
@@ -31,11 +21,19 @@ class ProductController extends Controller
         return $product;
     }
 
+    //Esta función guardará los productos que enviaremos.
+    public function store(Request $request)
+    {
+        $product = new Product();
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->save();
+    }
+
     //Esta función actualizará el producto que hayamos seleccionado
     public function update(Request $request)
     {
         $product = Product::findOrFail($request->id);
-
         $product->name = $request->name;
         $product->description = $request->description;
 
