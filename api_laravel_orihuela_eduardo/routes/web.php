@@ -12,12 +12,3 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/productos', 'ProductController@index');
-Route::get('/productos/buscar', 'ProductController@show');
-
-Route::post('/productos/guardar', 'ProductController@store');
-
-Route::put('/productos/actualizar', 'ProductController@update');
-
-Route::delete('/productos/borrar/{id}', 'ProductController@destroy');
